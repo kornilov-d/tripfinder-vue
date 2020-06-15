@@ -7,18 +7,17 @@
           </b-navbar-brand>
           <b-navbar-nav class="ml-auto">
             <b-button
-              v-if=isAuthenicated
               right pill variant="primary"
               router-link to = "/login">
                 Войти
             </b-button>
             <div
               class = 'user-info'
-              v-if = !isAuthenticated>
-              <b-list-group-item class="d-flex align-items-center userview" router-link to = "/profile">
-                <b-avatar variant="primary" text="ДК" class="mr-3"></b-avatar>
-                <span class="mr-auto">Дмитрий Корнилов <br> @kornilov</span>
-              </b-list-group-item>
+              v-if = isAuthenticated>
+<!--              <b-list-group-item class="d-flex align-items-center userview" router-link to = "/profile">-->
+<!--                <b-avatar variant="primary" text="ДК" class="mr-3"></b-avatar>-->
+<!--                <span class="mr-auto">Дмитрий Корнилов <br> @kornilov</span>-->
+<!--              </b-list-group-item>-->
             </div>
 
           </b-navbar-nav>

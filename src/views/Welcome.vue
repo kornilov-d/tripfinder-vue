@@ -4,10 +4,10 @@
       <br>
         <b-container fluid>
           <b-row>
-            <b-col cols="3">
+            <b-col sm="12" md="6" lg="4" xl="3">
               <Search />
             </b-col>
-            <b-col cols="9">
+            <b-col sm="12" md="6" lg="8" xl="9">
               <Routes />
             </b-col>
           </b-row>
