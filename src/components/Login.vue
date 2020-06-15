@@ -1,7 +1,6 @@
 <template>
   <b-container>
     <br>
-
         <div class = "login-window">
           <b-form @submit.prevent="setLogin">
             <b-input-group prepend="@" >
