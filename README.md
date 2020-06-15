@@ -1,4 +1,4 @@
-# frontend
+# Tripfinder: Frontend
 
 ## Project setup
 ```
