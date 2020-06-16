@@ -4,18 +4,17 @@
         <div class = "login-window">
           <b-form @submit.prevent="setLogin">
             <b-input-group prepend="@" >
-              <b-input id="input-username" placeholder="Логин" v-model="username"></b-input>
+              <b-input id="input-username" required placeholder="Логин" v-model="username"></b-input>
             </b-input-group>
             <br>
             <b-input-group type="password" prepend="**">
-              <b-input id="input-password" type="password" placeholder="Пароль" v-model="password"></b-input>
+              <b-input id="input-password" required type="password" placeholder="Пароль" v-model="password"></b-input>
             </b-input-group>
             <br>
-            <b-button block variant="primary" @click.prevent="authenticate" type="submit" >
+            <b-button block variant="primary" @click.prevent="handleLogin" type="submit" >
               Войти
             </b-button>
             <br>
-
           </b-form>
         </div>
 

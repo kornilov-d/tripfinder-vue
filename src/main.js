@@ -5,16 +5,15 @@ import './plugins/font-awesome'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import FlagIcon from 'vue-flag-icon'
-import VueI18n from 'vue-i18n'
-import  GlMap from "vue-mapbox";
+import GlMap from "vue-mapbox";
+import Axios from 'axios'
 
 
+
+export let API_URL = 'http://tripfinder-api.herokuapp.com/'
 
 Vue.config.productionTip = false
 
-Vue.use(FlagIcon)
-Vue.use(VueI18n)
 Vue.use(GlMap)
 
 

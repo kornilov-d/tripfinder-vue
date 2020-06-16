@@ -20,7 +20,10 @@ const routes = [
   {
     path: '/login',
     name: 'Вход/Регистрация',
-    component: () => import('../views/LogReg.vue')
+    component: () => import('../views/LogReg.vue'),
+    meta: {
+      guest: true
+    }
   },
   {
     path: '/route',
@@ -30,7 +33,10 @@ const routes = [
   {
     path: '/profile',
     name: 'Profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 

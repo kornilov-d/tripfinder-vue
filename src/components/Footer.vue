@@ -24,5 +24,7 @@
 
   .footer{
     margin-bottom: 1.5em;
+    position: absolute;
+    bottom: 0;
   }
 </style>

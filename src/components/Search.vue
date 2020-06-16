@@ -52,6 +52,7 @@
     name: 'Search',
     data(){
       return{
+        type_name,
         selected: [],
         options: [
           { text: 'Музеи', value: 'музей' },
