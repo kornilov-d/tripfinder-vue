@@ -10,8 +10,11 @@
             <b-col sm="12" md="6" lg="8" xl="9">
               <Routes />
             </b-col>
+            <Footer />
           </b-row>
+
         </b-container>
+
     </div>
 </template>
 
@@ -19,6 +22,7 @@
 import NavBar from '../components/NavBar.vue'
 import Search from '../components/Search.vue'
 import Routes from '../components/Routes.vue'
+import Footer from '../components/Footer'
 
 export default {
   name: 'Welcome',
@@ -26,6 +30,7 @@ export default {
     NavBar,
     Search,
     Routes,
+    Footer,
   }
 }
 
