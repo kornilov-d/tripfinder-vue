@@ -14,10 +14,9 @@
             <div
               class = 'user-info'
               v-if = isAuthenticated>
-<!--              <b-list-group-item class="d-flex align-items-center userview" router-link to = "/profile">-->
-<!--                <b-avatar variant="primary" text="ДК" class="mr-3"></b-avatar>-->
-<!--                <span class="mr-auto">Дмитрий Корнилов <br> @kornilov</span>-->
-<!--              </b-list-group-item>-->
+              <b-list-group-item class="d-flex align-items-center userview" router-link to = "/profile">
+                <b-avatar variant="primary" text="ДК" class="mr-3"></b-avatar>
+              </b-list-group-item>
             </div>
 
           </b-navbar-nav>

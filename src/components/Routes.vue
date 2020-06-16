@@ -4,7 +4,7 @@
       <b-card
         router-link to = "/routeinfo"
         title="Клёвый маршрут"
-        img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.2833,59.9391,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+        img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.2833,59.9391,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text
           router-link to = "/routeinfo">
           Описание первого маршрута
@@ -12,7 +12,7 @@
       </b-card>
 
       <b-card title="Понтовые места" router-link to = "/routeinfo"
-      img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.2886,59.9511,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+      img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.2886,59.9511,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
           Еще один маршрут
         </b-card-text>
@@ -21,14 +21,14 @@
     <br>
 
       <b-card title="Маршрут третий"
-              img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3167,59.9666,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+              img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3167,59.9666,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
           Опа! Еще один маршрут
         </b-card-text>
       </b-card>
 
       <b-card title="Маршрут 4"
-      img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3501,59.9322,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+      img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3501,59.9322,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
           нас много.
         </b-card-text>
@@ -37,14 +37,14 @@
     <br>
 
       <b-card title="Клёвый маршрут"
-      img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+      img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
           Описание первого маршрута
         </b-card-text>
       </b-card>
 
       <b-card title="Понтовые места"
-      img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.32,59.8918,13.61,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+      img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.32,59.8918,13.61,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
           Еще один маршрут
         </b-card-text>
@@ -53,46 +53,43 @@
     <br>
 
       <b-card title="Маршрут третий"
-              img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+              img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
           Опа! Еще один маршрут
         </b-card-text>
       </b-card>
 
       <b-card title="Маршрут 4"
-              img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+              img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
           нас много.
         </b-card-text>
       </b-card>
 
-    <br>
 
         <b-card title="Клёвый маршрут"
-        img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3149,59.9277,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+        img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3149,59.9277,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             Описание первого маршрута
           </b-card-text>
         </b-card>
 
         <b-card title="Понтовые места"
-                img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+                img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             Еще один маршрут
           </b-card-text>
         </b-card>
 
-      <br>
-
         <b-card title="Маршрут третий"
-                img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+                img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             Опа! Еще один маршрут
           </b-card-text>
         </b-card>
 
         <b-card title="Маршрут 4"
-                img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+                img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             нас много.
           </b-card-text>
@@ -101,14 +98,14 @@
       <br>
 
         <b-card title="Клёвый маршрут"
-                img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+                img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             Описание первого маршрута
           </b-card-text>
         </b-card>
 
         <b-card title="Понтовые места"
-                img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+                img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             Еще один маршрут
           </b-card-text>
@@ -117,14 +114,14 @@
       <br>
 
         <b-card title="Маршрут третий"
-                img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+                img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             Опа! Еще один маршрут
           </b-card-text>
         </b-card>
 
         <b-card title="Маршрут 4"
-                img-src="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+                img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.3233,59.9093,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
           <b-card-text>
             нас много.
           </b-card-text>
