@@ -1,6 +1,6 @@
 <template>
     <div >
-        <b-navbar type="light" variant="white" fixed>
+        <b-navbar type="light" variant="white" fixed="top">
           <b-navbar-brand
             router-link to = "/">
               <img class="navbar-logo" src="../assets/logo_b.png">
@@ -21,6 +21,7 @@
 
           </b-navbar-nav>
         </b-navbar>
+      <br><br>
 
     </div>
 </template>
@@ -33,6 +34,8 @@ export default {
 </script>
 
 <style scoped lang = "scss">
+
+
   .navbar-logo{
     max-height: 1.8em;
   }

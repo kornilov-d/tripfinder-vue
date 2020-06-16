@@ -23,6 +23,6 @@
   }
 
   .footer{
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
 </style>
