@@ -9,7 +9,6 @@
           Описание первого маршрута
         </b-card-text>
       </b-card>
-      {{tourroutes}}
       <b-card title="Понтовые места"
       img-src="https://api.mapbox.com/styles/v1/kornilovd/ckbh6y4k008bo1iqsx696iwxw/static/30.2886,59.9511,13.13,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-text>
@@ -49,7 +48,7 @@
 
     mounted () {
 
-      axios.get('http://tripfinder-api.herokuapp.com/api/routes/', {
+      axios.get('https://tripfinder-api.herokuapp.com/api/routes/', {
         headers: {
           "Content-Type": "application/json"
         }}
