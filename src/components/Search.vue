@@ -1,7 +1,15 @@
 <template>
   <div class="search-bar">
-    <b-card title="Поиск" bg-variant="light">
-      <hr>
+    <b-card bg-variant="light">
+      <b-card-title v-b-toggle.collapse-query>
+        Поиск
+        <span v-if="!isHidden">
+          <fa-icon icon="chevron-down" @click="isHidden = !isHidden"  class="aligned-to-right"></fa-icon>
+        </span>
+      </b-card-title>
+
+      <b-collapse id="collapse-query" class="mt-2">
+        <hr>
       <b-input-group description="Ищите по ключевым словам, названиям мест и т.д.">
         <b-form-input placeholder="Места, ключевые слова, т.д."
                       />
@@ -43,6 +51,7 @@
       <b-button block variant="dark"  type="submit">
         Подобрать маршрут
       </b-button>
+      </b-collapse>
     </b-card>
   </div>
 </template>
@@ -52,6 +61,7 @@
     name: 'Search',
     data(){
       return{
+        isHidden: true,
         type_name,
         selected: [],
         options: [
@@ -69,6 +79,10 @@
 <style scoped>
   .search-bar{
     margin-top: 1em;
+  }
+
+  .aligned-to-right{
+    float: right;
   }
 
   #range-selector{
