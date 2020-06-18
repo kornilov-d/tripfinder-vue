@@ -48,7 +48,7 @@
       register: function () {
         let data = {
           email: this.email,
-          username: this.username,
+          name: this.username,
           password: this.password,
           is_admin: this.is_admin
         }

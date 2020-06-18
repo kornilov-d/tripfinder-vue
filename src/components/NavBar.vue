@@ -1,6 +1,6 @@
 <template>
     <div >
-        <b-navbar type="light" variant="white" fixed="top">
+        <b-navbar type="light" variant="white" fixed="top" :key="isLoggedIn">
           <b-navbar-brand
             router-link to = "/">
               <img class="navbar-logo" src="../assets/logo_b.png">
@@ -9,13 +9,15 @@
             <b-button
               v-if="!isLoggedIn"
               right pill variant="primary"
-              router-link to = "/login">
+              router-link to = "/login"
+              :key="isLoggedIn">
                 Войти
               <span><fa-icon icon="sign-in-alt" /></span>
             </b-button>
             <div
               class = 'user-info'
-              v-if = "isLoggedIn" >
+              v-if = "isLoggedIn"
+              :key="isLoggedIn">
               <router-link to="/profile">
                 <b-avatar variant="primary" class="mr-3"></b-avatar>
               </router-link>
@@ -40,7 +42,7 @@
 export default {
   name: 'NavBar',
   computed : {
-    isLoggedIn : function(){ return this.$store.getters.isLoggedIn},
+    isLoggedIn : function(){ this.$forceUpdate(); return this.$store.getters.isLoggedIn},
     user () {
       return this.$store.state.user;
     }

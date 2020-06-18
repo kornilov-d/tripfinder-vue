@@ -11,6 +11,12 @@
 
   export default {
     name: 'Profile',
+    computed : {
+      isLoggedIn : function(){ return this.$store.getters.isLoggedIn},
+      user () {
+        return this.$store.state.user;
+      }
+    },
     components: {
       NavBar,
       RouteMap,
