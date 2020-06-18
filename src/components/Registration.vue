@@ -14,9 +14,7 @@
         <b-input id="input-password" type="password" placeholder="Пароль" v-model="password" required></b-input>
       </b-input-group>
       <br>
-      <b-input-group type="password" prepend="**">
-        <b-input id="input-password" type="password" placeholder="Подтверждение пароля" v-model="password_confirmation"></b-input>
-      </b-input-group>
+
       <br>
       <b-button block variant="primary" type="submit" >
         Создать аккаунт
@@ -40,7 +38,6 @@
         username : "",
         email : "",
         password : "",
-        password_confirmation : "",
         is_admin : false,
       }
     },
