@@ -3,8 +3,8 @@
     <b-card bg-variant="light">
       <b-card-title v-b-toggle.collapse-query>
         Поиск
-        <span v-if="!isHidden">
-          <fa-icon icon="chevron-down" @click="isHidden = !isHidden"  class="aligned-to-right"></fa-icon>
+        <span>
+          <fa-icon icon="chevron-down" class="aligned-to-right"></fa-icon>
         </span>
       </b-card-title>
 

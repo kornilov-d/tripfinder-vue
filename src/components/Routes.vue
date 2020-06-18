@@ -17,6 +17,7 @@
 
 
   import axios from 'axios'
+  import { API_URL } from '../main'
 
   export default {
     name: 'Routes',
@@ -30,7 +31,7 @@
 
     mounted () {
 
-      axios.get('https://tripfinder-api.herokuapp.com/api/routes/', {
+      axios.get(`${API_URL}api/routes`, {
         headers: {
           "Content-Type": "application/json"
         }}

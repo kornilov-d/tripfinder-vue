@@ -22,7 +22,7 @@ const routes = [
     name: 'Вход/Регистрация',
     component: () => import('../views/LogReg.vue'),
     meta: {
-      guest: true
+      'guest': true
     }
   },
   {
@@ -35,8 +35,13 @@ const routes = [
     name: 'Profile',
     component: Profile,
     meta: {
-      requiresAuth: true
+      'requiresAuth': true
     }
+  },
+
+  {
+    path: '*',
+    redirect: '/'
   }
 ]
 

@@ -4,7 +4,7 @@ import {
   faChevronUp,
   faKey,
   faSearch,
-  faSignInAlt,
+  faSignInAlt, faSignOutAlt,
   faUserSecret
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -16,5 +16,7 @@ library.add(faSearch)
 library.add(faKey)
 library.add(faChevronDown)
 library.add(faChevronUp)
+library.add(faSignOutAlt)
+library.add(faSignInAlt)
 
 Vue.component('fa-icon', FontAwesomeIcon)
