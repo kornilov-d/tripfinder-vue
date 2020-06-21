@@ -1,22 +1,17 @@
 <template>
   <div class="search-bar">
     <b-card bg-variant="light">
-      <b-card-title v-b-toggle.collapse-query>
+      <b-card-title v-b-toggle.collapse-query >
         Поиск
         <span>
-          <fa-icon icon="chevron-down" class="aligned-to-right"></fa-icon>
+          <fa-icon icon="chevron-up" class="aligned-to-right"></fa-icon>
         </span>
       </b-card-title>
 
-      <b-collapse id="collapse-query" class="mt-2">
+      <b-collapse id="collapse-query" visible class="mt-2">
         <hr>
-      <b-input-group description="Ищите по ключевым словам, названиям мест и т.д.">
+      <b-input-group description="Ищите по ключевым словам, названиям мест и т.д." v-model="search">
         <b-form-input placeholder="Места, ключевые слова, т.д."/>
-        <b-input-group-append>
-          <b-button variant="primary">
-            <span><fa-icon icon="search" /></span>
-          </b-button>
-        </b-input-group-append>
       </b-input-group>
       <br>
       <b-form-group label="Посещаемые места">
@@ -58,12 +53,13 @@
 <script>
   import axios from 'axios'
   import { API_URL } from '../main'
+  
 
   export default {
     name: 'Search',
     data(){
       return{
-        isHidden: true,
+        isHidden: false,
         types: null,
         options:[{
           value: types.type_name,

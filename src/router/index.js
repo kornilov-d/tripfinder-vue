@@ -26,8 +26,8 @@ const routes = [
     }
   },
   {
-    path: '/route/:slug',
-    name: 'Маршрут',
+    path: '/route/:id',
+    name: 'Route',
     component: () => import('../views/RouteInfo.vue')
   },
   {

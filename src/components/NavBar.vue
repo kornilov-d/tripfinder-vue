@@ -42,7 +42,7 @@
 export default {
   name: 'NavBar',
   computed : {
-    isLoggedIn : function(){ this.$forceUpdate(); return this.$store.getters.isLoggedIn},
+    isLoggedIn : function(){ return this.$store.getters.isLoggedIn},
     user () {
       return this.$store.state.user;
     }

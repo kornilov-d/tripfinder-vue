@@ -1,11 +1,11 @@
 <template>
   <div class="mt-3">
     <b-card-group columns >
-      <b-card v-for="tourroute in tourroutes"
-
+      <b-card 
+      v-for="tourroute in tourroutes" 
       img-src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4241,37.78,14.25,0/600x200?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-title style="text-color: white">
-          <router-link :to="{name: 'route', params: {slug: tourroute.id}}" >
+          <router-link :to="{name: 'Route', params: {id: tourroute.id}}" >
             {{tourroute.route_name}}
           </router-link>
         </b-card-title>
@@ -32,6 +32,7 @@
     data () {
       return {
         tourroutes: null,
+        search: '',
         accessToken: "sk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrYjUzbXNhNTBsd2Eycm82YzEwZ3VtcHQifQ.APV_H2lhZp-6L4e-9hw5XA", // your access token. Needed if you using Mapbox maps
         mapStyle: "https://api.mapbox.com/styles/v1/kornilovd/ckb3rp2vo0uli1ipf98kzhkaf.html?fresh=true&title=copy&access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw",
       }
@@ -48,6 +49,14 @@
         this.tourroutes = response.data
       })
     },
+
+    computed: {
+      tourroutesFiltered() {
+      return this.tourroutes.filter(post => {
+        return post.route_name.toLowerCase().includes(this.route_desc.toLowerCase())
+      })
+    }
+    }
   }
 </script>
 

@@ -4,15 +4,12 @@
       id="map"
       container = "map"
       :zoom="13"
-      :center="routeinfo.waypoints[0].location"
+      :center="routeinfo.waypoints[1].location"
       :map-style.sync="mapStyle"
       :access-token="accessToken">
         <MglNavigationControl position="top-right"/>
-        <MglGeojsonLayer source="routeinfo.routes.legs"/>
-        <MglMarker v-for="waypoint in routeinfo.waypoints"
-                   :coordinates="waypoint.location"
-                   :color="424874"
-        />
+        <!-- <MglGeojsonLayer :source="routeinfo.routes" :layer="geojsonlayer"/> -->
+        <MglMarker v-for="waypoint in routeinfo.waypoints" :coordinates="waypoint.location" :color="424874"/>
     </MglMap>
   </div>
 </template>
@@ -36,6 +33,8 @@
         accessToken: 'pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw',
         mapStyle: 'mapbox://styles/kornilovd/ckblkalnx0ivc1iqrnv52cl2u',
         routeinfo: null,
+
+
       }
     },
     mounted () {
@@ -48,7 +47,10 @@
           this.routeinfo = response.data
         })
 
-    }
+    },
+    created() {
+            this.id = this.$route.params.id;
+        },
   }
 </script>
 
