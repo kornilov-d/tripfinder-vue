@@ -39,7 +39,7 @@
 
     mounted () {
 
-      axios.get(`http://127.0.0.1:8000/api/routes`, {
+      axios.get(`${API_URL}/api/routes`, {
         headers: {
           "Content-Type": "application/json"
         }}
