@@ -8,6 +8,7 @@ import store from './store'
 import GlMap from "vue-mapbox";
 import VueCompositionApi from "@vue/composition-api";
 import VueResource from "vue-resource";
+import * as VeeValidate from 'vee-validate';
 
 Vue.use(VueCompositionApi);
 Vue.use(VueResource);

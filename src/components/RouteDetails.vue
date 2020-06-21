@@ -1,7 +1,14 @@
 <template>
   <div>
     <br>
-    <h3>{{route.route_name}}</h3>
+    <b-card :title="route.route_name">
+      <b-card-sub-title>
+        {{route.route_desc}}
+      </b-card-sub-title>
+      <hr>
+
+    </b-card>
+    {{route_points.point}}
   </div>
 </template>
 
@@ -15,6 +22,7 @@ import { API_URL } from '../main'
       return{
       id: 0,
       route: [],
+      route_points: null,
       }
     },
 
@@ -29,6 +37,17 @@ import { API_URL } from '../main'
       .then( response => {
       this.route= response.data
       })
+
+      axios.get(`${API_URL}/api/route-items/?belongs=${this.id}/`, {
+      headers: {
+      "Content-Type": "application/json"
+      }}
+      )
+      .then( response => {
+      this.route_points= response.data
+      })
+
+      
     },
 
   }

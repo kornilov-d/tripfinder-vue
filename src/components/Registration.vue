@@ -3,15 +3,16 @@
   <div class = "reg-window">
     <b-form @submit.prevent="register">
       <b-input-group  >
-        <b-input id="input-email" placeholder="E-mail" v-model="email" required autofocus></b-input>
+        <b-input id="new-email" placeholder="E-mail" v-model="email" required autofocus></b-input>
       </b-input-group>
       <br>
       <b-input-group prepend="@" >
-        <b-input id="input-username" placeholder="Логин" v-model="username" required></b-input>
+        <b-input id="new-username" placeholder="Логин" v-model="username" required></b-input>
       </b-input-group>
       <br>
       <b-input-group type="password" prepend="**">
-        <b-input id="input-password" type="password" placeholder="Пароль" v-model="password" required></b-input>
+        <b-input id="new-password" type="password" placeholder="Пароль" v-model="password" required></b-input>
+        <b-form-text id="pass-help">Пароль должен содержать буквы и цифры. Длина пароля: 8+ символов.</b-form-text>
       </b-input-group>
       <br>
 
@@ -31,6 +32,7 @@
   import SIGNUP_URL from '../store/index'
   import axios from 'axios'
   import { API_URL } from '../main'
+  import VeeValidate from '../main'
   export default {
     name: 'Registration',
     data(){
@@ -44,10 +46,10 @@
     methods: {
       register: function () {
         let data = {
-          email: this.email,
-          name: this.username,
-          password: this.password,
-          is_admin: this.is_admin
+          'email': this.email,
+          'username': this.username,
+          'password': this.password,
+
         }
 
         this.$store.dispatch('register', data)

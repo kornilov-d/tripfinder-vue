@@ -25,7 +25,7 @@
     "mapbox-gl": "^0.53.1",
     "mapbox-gl-directions": "^3.0.3",
     "mapbox-gl-vue": "^2.0.4",
-    "vee-validate": "^3.3.3",
+    "vee-validate": "^3.3.5",
     "vue": "^2.6.11",
     "vue-flag-icon": "^1.0.6",
     "vue-fontawesome": "0.0.2",
