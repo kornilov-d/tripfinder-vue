@@ -6,7 +6,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import GlMap from "vue-mapbox";
-import Axios from 'axios'
 import VueCompositionApi from "@vue/composition-api";
 import VueResource from "vue-resource";
 
@@ -15,7 +14,7 @@ Vue.use(VueResource);
 
 
 
-export let API_URL = 'tripfinder-api.herokuapp.com/'
+export let API_URL = 'https://tripfinder-api.herokuapp.com'
 export let MAPBOX_URL = ''
 
 Vue.config.productionTip = false
