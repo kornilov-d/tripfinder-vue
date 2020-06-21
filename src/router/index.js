@@ -26,7 +26,7 @@ const routes = [
     }
   },
   {
-    path: '/route',
+    path: '/route/:slug',
     name: 'Маршрут',
     component: () => import('../views/RouteInfo.vue')
   },

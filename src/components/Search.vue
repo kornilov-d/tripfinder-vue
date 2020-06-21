@@ -11,10 +11,9 @@
       <b-collapse id="collapse-query" class="mt-2">
         <hr>
       <b-input-group description="Ищите по ключевым словам, названиям мест и т.д.">
-        <b-form-input placeholder="Места, ключевые слова, т.д."
-                      />
+        <b-form-input placeholder="Места, ключевые слова, т.д."/>
         <b-input-group-append>
-          <b-button variant="dark">
+          <b-button variant="primary">
             <span><fa-icon icon="search" /></span>
           </b-button>
         </b-input-group-append>
@@ -48,7 +47,7 @@
         </b-input-group>
       </b-form>
       <br>
-      <b-button block variant="dark"  type="submit">
+      <b-button block variant="primary"  type="submit">
         Подобрать маршрут
       </b-button>
       </b-collapse>
@@ -57,21 +56,35 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import { API_URL } from '../main'
+
   export default {
     name: 'Search',
     data(){
       return{
         isHidden: true,
-        type_name,
+        types: null,
+        options:[{
+          value: types.type_name,
+          text: types.type_name
+        }],
         selected: [],
-        options: [
-          { text: 'Музеи', value: 'музей' },
-          { text: 'Парки', value: 'парк' },
-          { text: 'Галереи', value: 'галерея' },
-          { text: 'Рестораны', value: 'ресторан' },
-          { text: 'Бары', value: 'бар' },
-        ]
+
+
       }
+    },
+    created ()  {
+      axios.get(`${API_URL}api/routes`, {
+      headers: {
+      "Content-Type": "application/json"
+      }}
+      )
+      .then( response => {
+      this.types = response.data
+      })
+
+
     }
   }
 </script>

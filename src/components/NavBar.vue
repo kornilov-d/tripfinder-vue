@@ -1,6 +1,6 @@
 <template>
     <div >
-        <b-navbar type="light" variant="white" fixed="top" :key="isLoggedIn">
+        <b-navbar type="light" variant="white" fixed="top" :key="isLoggedIn" toggleable="true">
           <b-navbar-brand
             router-link to = "/">
               <img class="navbar-logo" src="../assets/logo_b.png">

@@ -1,10 +1,8 @@
 <template>
     <div class = "footer">
-
-      <b-navbar fixed = "bottom" type="dark" variant="dark">
+      <b-navbar type="light" variant="light" fixed="bottom">
         <hr>
-            <img src="../assets/footer.png" class="footer-logo">
-
+        <img src="../assets/footer.png" class="footer-logo" align="left">
       </b-navbar>
     </div>
 </template>
@@ -16,15 +14,16 @@
 </script>
 
 <style scoped>
-  .footer{
-    width: 100%;
-  }
+
   .footer-logo{
     max-height: 2em;
   }
-
+  .footer > *:last-child{
+    margin-bottom: 0px;
+  }
   .footer{
-    margin-bottom: 1.5em;
+
     max-height: 4em;
+    width: 100%;
   }
 </style>

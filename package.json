@@ -22,7 +22,7 @@
     "jquery": "^3.5.1",
     "jwt-decode": "^2.2.0",
     "map-promisified": "^0.4.0",
-    "mapbox-gl": "^1.11.0",
+    "mapbox-gl": "^0.53.1",
     "mapbox-gl-directions": "^3.0.3",
     "mapbox-gl-vue": "^2.0.4",
     "vee-validate": "^3.3.3",

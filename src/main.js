@@ -15,7 +15,8 @@ Vue.use(VueResource);
 
 
 
-export let API_URL = 'https://tripfinder-api.herokuapp.com/'
+export let API_URL = '127.0.0.1:8000/'
+export let MAPBOX_URL = ''
 
 Vue.config.productionTip = false
 

@@ -1,9 +1,11 @@
 <template>
   <div class="mt-3">
     <b-card-group columns >
-      <b-card v-for="tourroute in tourroutes">
-        <b-card-title>
-          <router-link :to="{path: 'route', query: {id: tourroute.id}}" >
+      <b-card v-for="tourroute in tourroutes"
+
+      img-src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4241,37.78,14.25,0/600x200?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+        <b-card-title style="text-color: white">
+          <router-link :to="{name: 'route', params: {slug: tourroute.id}}" >
             {{tourroute.route_name}}
           </router-link>
         </b-card-title>
@@ -17,10 +19,16 @@
 
 
   import axios from 'axios'
-  import { API_URL } from '../main'
+  import { API_URL, MAPBOX_URL } from '../main'
 
   export default {
     name: 'Routes',
+    props: {
+      routeid : {
+        type: String,
+        default: false
+      }
+    },
     data () {
       return {
         tourroutes: null,
@@ -31,7 +39,7 @@
 
     mounted () {
 
-      axios.get(`${API_URL}api/routes`, {
+      axios.get(`http://127.0.0.1:8000/api/routes`, {
         headers: {
           "Content-Type": "application/json"
         }}

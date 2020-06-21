@@ -1,14 +1,14 @@
 <template>
   <div>
     <NavBar />
-    <RouteMap />
-    <b-container>
+
+    <b-container fluid>
       <b-row>
         <b-col cols="4">
           <RouteDetails />
         </b-col>
         <b-col cols="8">
-
+          <RouteMap />
         </b-col>
       </b-row>
     </b-container>
