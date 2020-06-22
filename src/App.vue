@@ -1,14 +1,20 @@
 <template>
   <div id="app">
+    <NavBar :key="isLoggedIn"/>
     <router-view/>
   </div>
 </template>
 
 <script>
 
+  import NavBar from './components/NavBar'
+
   export default {
     computed : {
       isLoggedIn : function(){ return this.$store.getters.isLoggedIn}
+    },
+    components : {
+      NavBar
     }
   }
 

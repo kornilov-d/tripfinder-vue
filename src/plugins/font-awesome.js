@@ -11,6 +11,7 @@ import { faFacebookSquare, faVk } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import Vue from 'vue'
+import { faClock } from '@fortawesome/free-regular-svg-icons'
 
 
 library.add(faUserSecret)
@@ -23,5 +24,6 @@ library.add(faSignOutAlt)
 library.add(faSignInAlt)
 library.add(faFacebookSquare)
 library.add(faVk)
+library.add(faClock)
 
 Vue.component('fa-icon', FontAwesomeIcon)

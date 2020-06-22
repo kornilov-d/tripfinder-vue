@@ -1,6 +1,5 @@
 <template>
     <div>
-      <NavBar />
       <ProfileView />
     </div>
 </template>

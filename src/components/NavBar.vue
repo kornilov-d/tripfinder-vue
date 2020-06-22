@@ -1,28 +1,28 @@
 <template>
     <div >
-        <b-navbar type="light" variant="white" fixed="top" :key="isLoggedIn" toggleable="true">
+        <b-navbar type="light" variant="white" fixed="top" >
           <b-navbar-brand
             router-link to = "/">
               <img class="navbar-logo" src="../assets/logo_b.png">
           </b-navbar-brand>
           <b-navbar-nav class="ml-auto">
             <b-button
-              v-if="!isLoggedIn"
+              v-show="!isLoggedIn"
               right pill variant="primary"
               router-link to = "/login"
-              :key="isLoggedIn">
+              >
                 Войти
               <span><fa-icon icon="sign-in-alt" /></span>
             </b-button>
             <div
               class = 'user-info'
-              v-if = "isLoggedIn"
-              :key="isLoggedIn">
+              v-show = "isLoggedIn"
+              >
               <router-link to="/profile">
                 <b-avatar variant="primary" class="mr-3"></b-avatar>
               </router-link>
               <b-button
-                v-if="isLoggedIn"
+                v-show="isLoggedIn"
                 right pill variant="primary"
                 @click="logout">
                 <span><fa-icon icon="sign-out-alt" /></span>
@@ -42,7 +42,7 @@
 export default {
   name: 'NavBar',
   computed : {
-    isLoggedIn : function(){ return this.$store.getters.isLoggedIn},
+    isLoggedIn : function(){ return this.$store.getters.isLoggedIn;  },
     user () {
       return this.$store.state.user;
     }
@@ -53,8 +53,12 @@ export default {
         .then(() => {
           this.$router.push('/')
         })
-    }
+    },
+
   },
+  created () {
+      this.$forceUpdate();
+  }
 }
 </script>
 

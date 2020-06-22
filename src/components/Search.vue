@@ -15,11 +15,13 @@
       </b-input-group>
       <br>
       <b-form-group label="Посещаемые места">
-        <b-form-checkbox-group inline
-          id = "types-group"
-          v-model="selected"
-          :options="options"
-          name="place-type" />
+        <b-form-checkbox-group
+        v-model="selected"
+        :options="types"
+        class="mb-3"
+        value-field="type_name"
+        text-field="type_name"
+    ></b-form-checkbox-group>
       </b-form-group>
 
       <label style="margin-right: 1em"> Количество мест </label>
@@ -32,16 +34,7 @@
         </b-input-group>
       </b-form>
       <br>
-      <label style="margin-right: 1em"> Продолжительность маршрута </label>
-      <b-form inline >
-        <b-input-group prepend="от " size="sm" id="range-selector">
-          <b-input id="inline-form-input-username" type="number"></b-input>
-        </b-input-group>
-        <b-input-group prepend="до " size="sm" id="range-selector">
-          <b-input id="inline-form-input-username" type="number" ></b-input>
-        </b-input-group>
-      </b-form>
-      <br>
+      
       <b-button block variant="primary"  type="submit">
         Подобрать маршрут
       </b-button>
@@ -61,17 +54,13 @@
       return{
         isHidden: false,
         types: null,
-        options:[{
-          value: types.type_name,
-          text: types.type_name
-        }],
         selected: [],
 
 
       }
     },
     created ()  {
-      axios.get(`${API_URL}api/routes`, {
+      axios.get(`${API_URL}/api/types`, {
       headers: {
       "Content-Type": "application/json"
       }}

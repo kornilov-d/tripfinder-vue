@@ -3,13 +3,15 @@
     <b-card-group columns >
       <b-card 
       v-for="tourroute in tourroutes" 
-      img-src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4241,37.78,14.25,0/600x200?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+      img-src="https://api.mapbox.com/styles/v1/kornilovd/ckblkalnx0ivc1iqrnv52cl2u/static/30.3042,59.9558,12.95,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
         <b-card-title style="text-color: white">
           <router-link :to="{name: 'Route', params: {id: tourroute.id}}" >
-            {{tourroute.route_name}}
+            {{tourroute.route_name}}<br>
           </router-link>
         </b-card-title>
         <b-card-text>{{tourroute.route_desc}}</b-card-text>
+
+        
       </b-card>
     </b-card-group>
   </div>
@@ -33,8 +35,8 @@
       return {
         tourroutes: null,
         search: '',
-        accessToken: "sk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrYjUzbXNhNTBsd2Eycm82YzEwZ3VtcHQifQ.APV_H2lhZp-6L4e-9hw5XA", // your access token. Needed if you using Mapbox maps
-        mapStyle: "https://api.mapbox.com/styles/v1/kornilovd/ckb3rp2vo0uli1ipf98kzhkaf.html?fresh=true&title=copy&access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw",
+        accessToken: "pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw", 
+        mapStyle: "/kornilovd/ckblkalnx0ivc1iqrnv52cl2u",
       }
     },
 

@@ -1,13 +1,11 @@
 <template>
   <div>
-    <NavBar />
-
     <b-container fluid>
       <b-row>
-        <b-col cols="4">
+        <b-col cols="12" sm="12" md="5" lg="4" xl="3">
           <RouteDetails />
         </b-col>
-        <b-col cols="8">
+        <b-col cols="12" sm="12" md="7" lg="8" xl="9">
           <RouteMap />
         </b-col>
       </b-row>
@@ -23,7 +21,6 @@
   export default {
     name: 'RouteInfo',
     components: {
-      NavBar,
       RouteDetails,
       RouteMap,
     }

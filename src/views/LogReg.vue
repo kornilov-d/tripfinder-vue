@@ -1,6 +1,5 @@
 <template>
   <div class = "log-reg">
-    <NavBar />
     <b-container class = "log-view">
       <b-row align-v="center" align-h="center">
         <b-col cols="12" sm="12" md="6" lg="5" xl="4" align-self="center">

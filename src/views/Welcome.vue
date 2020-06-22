@@ -1,6 +1,5 @@
 <template>
     <div class = "welcome">
-      <NavBar />
       <br>
         <b-container fluid>
           <b-row>

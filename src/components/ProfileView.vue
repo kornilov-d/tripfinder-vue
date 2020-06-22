@@ -2,7 +2,7 @@
   <div>
     <br>
     <h1>{{currentUser.username}}</h1>
-    <h1>{{user.email}}</h1>
+    <h1>{{currentUser.email}}</h1>
   </div>
 
 </template>

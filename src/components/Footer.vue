@@ -1,6 +1,6 @@
 <template>
     <div class = "footer">
-      <b-navbar type="light" variant="light" fixed="bottom">
+      <b-navbar type="light" variant="light" >
         <hr>
         <img src="../assets/footer.png" class="footer-logo" align="left">
       </b-navbar>

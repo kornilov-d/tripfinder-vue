@@ -27,6 +27,13 @@
 
 export default {
   name: 'Login',
+  computed : {
+    isLoggedIn : function(){ return this.$store.getters.isLoggedIn;  },
+    user () {
+      return this.$store.state.user;
+
+    }
+  },
   data () {
     return {
         username: '',
@@ -39,7 +46,7 @@ export default {
       let username = this.username
       let password = this.password
       this.$store.dispatch('login', { username, password })
-          .then(() => this.$router.push('/profile'))
+          .then(() => {this.$router.push('/profile')})
           .catch(err => console.log(err))
     }
   }

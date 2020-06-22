@@ -1,14 +1,21 @@
 <template>
   <div>
     <br>
-    <b-card :title="route.route_name">
-      <b-card-sub-title>
-        {{route.route_desc}}
-      </b-card-sub-title>
+    <b-card :title="routeinfo.route_name" text-variant="dark" >
+      <p>
+        {{routeinfo.route_desc}}
+      </p>
       <hr>
+      <b-list-group :key="index" v-for="(point, index) in routeinfo.points" role="tablist">
+        <b-list-group-item  class="route-point" >
+          <h6 class="point-name" block v-b-toggle="'accordion-'+index" role="tab">{{point.point_name}}</h6>
+          <b-collapse :id="'accordion-'+index" role="tabpanel">
+            <span></span>{{point.time_visiting}} мин.
+          </b-collapse>
 
+        </b-list-group-item>
+      </b-list-group>
     </b-card>
-    {{route_points.point}}
   </div>
 </template>
 
@@ -21,8 +28,7 @@ import { API_URL } from '../main'
     data () {
       return{
       id: 0,
-      route: [],
-      route_points: null,
+      routeinfo: null,
       }
     },
 
@@ -35,24 +41,27 @@ import { API_URL } from '../main'
       }}
       )
       .then( response => {
-      this.route= response.data
+      this.routeinfo= response.data
       })
-
-      axios.get(`${API_URL}/api/route-items/?belongs=${this.id}/`, {
-      headers: {
-      "Content-Type": "application/json"
-      }}
-      )
-      .then( response => {
-      this.route_points= response.data
-      })
-
-      
     },
 
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
+  @import '../assets/scss/custom-vars.scss';
+
+  .route-point{
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .point-name{
+    color: $primary;
+  }
+  .point-name:hover{
+    color: $info;
+  }
 </style>

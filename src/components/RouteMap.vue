@@ -4,11 +4,11 @@
       id="map"
       container = "map"
       :zoom="13"
-      :center="routeinfo.waypoints[1].location"
+      :center="[routedetails.points[0].longitude, routedetails.points[0].latitude]"
       :map-style.sync="mapStyle"
       :access-token="accessToken">
         <MglNavigationControl position="top-right"/>
-        <MglMarker v-for="waypoint in routeinfo.waypoints" :coordinates="waypoint.location" :color="424874"/>
+        <MglMarker v-for="point in routedetails.points" :coordinates='[point.longitude, point.latitude]' :color="424874"/>
     </MglMap>
   </div>
 </template>
@@ -31,23 +31,34 @@
       return {
         accessToken: 'pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw',
         mapStyle: 'mapbox://styles/kornilovd/ckblkalnx0ivc1iqrnv52cl2u',
-        routeinfo: null,
+        mapboxDirections: null,
+        routedetails: null,
+
       }
     },
-    mounted () {
+    created () {
+      this.id = this.$route.params.id;
       axios.get(`https://api.mapbox.com/directions/v5/mapbox/walking/30.28933%2C59.929787%3B30.306233%2C59.934137%3B30.329537%2C59.937509?alternatives=true&geometries=geojson&steps=true&language=ru&access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw`, {
         headers: {
           "Content-Type": "application/json"
         }}
       )
         .then( response => {
-          this.routeinfo = response.data
+          this.mapboxDirections = response.data
+        })
+
+      axios.get(`${API_URL}/api/routes/${this.id}/`, {
+        headers: {
+          "Content-Type": "application/json"
+        }}
+      )
+        .then( response => {
+          this.routedetails= response.data
         })
 
     },
-    created() {
-            this.id = this.$route.params.id;
-        },
+
+
   }
 </script>
 
