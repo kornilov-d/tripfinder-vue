@@ -31,7 +31,6 @@ export default {
   name: 'LogReg',
   components: {
     Registration,
-    NavBar,
     Login
   }
 }

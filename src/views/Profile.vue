@@ -19,7 +19,6 @@
     },
     components: {
       ProfileView,
-      NavBar,
       RouteMap,
     }
   }

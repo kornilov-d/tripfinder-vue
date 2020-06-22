@@ -4,12 +4,11 @@
         <b-container fluid>
           <b-row>
             <b-col sm="12" md="12" lg="3" xl="3">
-              <Search />
+              <Search @inputData />
             </b-col>
             <b-col sm="12" md="12" lg="9" xl="9">
               <Routes />
             </b-col>
-            <Footer />
           </b-row>
         </b-container>
     </div>
@@ -24,10 +23,8 @@ import Footer from '../components/Footer'
 export default {
   name: 'Welcome',
   components: {
-    NavBar,
     Search,
     Routes,
-    Footer,
   }
 }
 

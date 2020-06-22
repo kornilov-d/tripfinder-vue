@@ -7,10 +7,16 @@
       </p>
       <hr>
       <b-list-group :key="index" v-for="(point, index) in routeinfo.points" role="tablist">
-        <b-list-group-item  class="route-point" >
-          <h6 class="point-name" block v-b-toggle="'accordion-'+index" role="tab">{{point.point_name}}</h6>
-          <b-collapse :id="'accordion-'+index" role="tabpanel">
-            <span></span>{{point.time_visiting}} мин.
+        <b-list-group-item  class="route-point" style="max-width: 500px;">
+          <div class="point-name d-flex align-items-center" v-b-toggle="'accordion-'+index" role="tab">
+            <b-avatar :text='index+1' class="point-pos" size="2em" variant="primary"/>
+            <div class="mr-auto">
+              <small>{{pointsinfo[index].obj_type.type_name}}</small>
+              <h6>{{point.point_name}}<span><fa-icon icon="bookmark" /> </span></h6>
+            </div>
+          </div>
+          <b-collapse :id="'accordion-'+index" role="tabpanel" class="add-info">
+            <p>{{point.obj_desc}}</p><small><fa-icon icon="clock" /> {{point.time_visiting}} мин.</small>
           </b-collapse>
 
         </b-list-group-item>
@@ -27,24 +33,29 @@ import { API_URL } from '../main'
     name: 'RouteDetails',
     data () {
       return{
-      id: 0,
-      routeinfo: null,
+        id: 0,
+        routeinfo: null,
+        pointsinfo: null
       }
     },
 
-    created() {
+    created: function () {
 
-      this.id = this.$route.params.id;
-      axios.get(`${API_URL}/api/routes/${this.id}/`, {
-      headers: {
-      "Content-Type": "application/json"
-      }}
-      )
-      .then( response => {
-      this.routeinfo= response.data
-      })
-    },
+      this.id = this.$route.params.id
 
+      axios.all([
+          axios.get(`${API_URL}/api/routes/${this.id}/`, {
+            headers: { 'Content-Type': 'application/json' }
+          }),
+          axios.get(`${API_URL}/api/points/`, {
+            headers: { 'Content-Type': 'application/json' },
+            params: {'route' : this.id}
+          })
+        ]
+      ).then(axios.spread((first_resp, second_resp)=> {
+        this.routeinfo = first_resp.data;
+        this.pointsinfo = second_resp.data}))
+    }
   }
 </script>
 
@@ -64,4 +75,12 @@ import { API_URL } from '../main'
   .point-name:hover{
     color: $info;
   }
+  .b-avatar{
+    margin-right: 1em;
+  }
+
+  .add-info{
+    padding-left: 3em;
+  }
+
 </style>

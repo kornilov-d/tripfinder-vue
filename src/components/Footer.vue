@@ -1,5 +1,5 @@
 <template>
-    <div class = "footer">
+    <div class = "fluid-container footer">
       <b-navbar type="light" variant="light" >
         <hr>
         <img src="../assets/footer.png" class="footer-logo" align="left">

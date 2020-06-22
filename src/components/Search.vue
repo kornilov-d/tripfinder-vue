@@ -10,7 +10,7 @@
 
       <b-collapse id="collapse-query" visible class="mt-2">
         <hr>
-      <b-input-group description="Ищите по ключевым словам, названиям мест и т.д." v-model="search">
+      <b-input-group description="Ищите по ключевым словам, названиям мест и т.д." v-model="searchQuery" @keyup.enter="submit">
         <b-form-input placeholder="Места, ключевые слова, т.д."/>
       </b-input-group>
       <br>
@@ -34,7 +34,7 @@
         </b-input-group>
       </b-form>
       <br>
-      
+
       <b-button block variant="primary"  type="submit">
         Подобрать маршрут
       </b-button>
@@ -46,17 +46,17 @@
 <script>
   import axios from 'axios'
   import { API_URL } from '../main'
-  
+
 
   export default {
     name: 'Search',
+    props: ['searchQuery'],
     data(){
       return{
         isHidden: false,
         types: null,
         selected: [],
-
-
+        searchQuery: ''
       }
     },
     created ()  {
@@ -70,6 +70,12 @@
       })
 
 
+    },
+    methods : {
+      submit: function() {
+        this.$emit("inputData", this.searchQuery);
+        this.searchQuery = "";
+      }
     }
   }
 </script>

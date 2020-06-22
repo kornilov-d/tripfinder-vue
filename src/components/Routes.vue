@@ -1,17 +1,16 @@
 <template>
   <div class="mt-3">
     <b-card-group columns >
-      <b-card 
-      v-for="tourroute in tourroutes" 
-      img-src="https://api.mapbox.com/styles/v1/kornilovd/ckblkalnx0ivc1iqrnv52cl2u/static/30.3042,59.9558,12.95,0/300x150@2x?access_token=pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw">
+      <b-card
+      v-for="item in tourroutes" :item = "item" >
+<!--      :img-src="'https://api.mapbox.com/styles/v1'+mapStyle+'/static/'+tourroute.points[0].longitude+','+tourroute.points[0].latitude+',12.95,0/300x150@2x?access_token='+accessToken"-->
+
         <b-card-title style="text-color: white">
-          <router-link :to="{name: 'Route', params: {id: tourroute.id}}" >
-            {{tourroute.route_name}}<br>
+          <router-link :to="{name: 'Route', params: {id: item.id}}" >
+            {{item.route_name}}<br>
           </router-link>
         </b-card-title>
-        <b-card-text>{{tourroute.route_desc}}</b-card-text>
-
-        
+        <b-card-text>{{item.route_desc}}</b-card-text>
       </b-card>
     </b-card-group>
   </div>
@@ -22,6 +21,7 @@
 
   import axios from 'axios'
   import { API_URL, MAPBOX_URL } from '../main'
+  import {searchQuery} from '../components/Search.vue'
 
   export default {
     name: 'Routes',
@@ -30,18 +30,17 @@
         type: String,
         default: false
       }
+
     },
     data () {
       return {
         tourroutes: null,
-        search: '',
-        accessToken: "pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw", 
+        accessToken: "pk.eyJ1Ijoia29ybmlsb3ZkIiwiYSI6ImNrOTJuZG9hcjAxbTczbG8yNDhlZGZpOWEifQ.EMvlWY1YaawgAIHcY9n5Cw",
         mapStyle: "/kornilovd/ckblkalnx0ivc1iqrnv52cl2u",
       }
     },
 
     mounted () {
-
       axios.get(`${API_URL}/api/routes`, {
         headers: {
           "Content-Type": "application/json"
@@ -55,7 +54,7 @@
     computed: {
       tourroutesFiltered() {
       return this.tourroutes.filter(post => {
-        return post.route_name.toLowerCase().includes(this.route_desc.toLowerCase())
+        return item.route_name.toLowerCase().includes(this.searchQuery.toLowerCase())
       })
     }
     }

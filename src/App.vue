@@ -8,6 +8,7 @@
 <script>
 
   import NavBar from './components/NavBar'
+  import Footer from './components/Footer'
 
   export default {
     computed : {
@@ -22,6 +23,7 @@
 
 <style lang="scss">
   @import 'assets/scss/custom-vars';
+
   body{
     background-color: #f5f5f5;
   }
