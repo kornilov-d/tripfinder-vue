@@ -49,6 +49,7 @@
       .then( response => {
         this.tourroutes = response.data
       })
+      map.addControl(directions, 'top-left');
     },
 
     computed: {

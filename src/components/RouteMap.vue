@@ -1,6 +1,15 @@
 <template>
   <div class="mgl-map-wrapper">
-    <div id="map"></div>
+    <MglMap
+      id="map"
+      container = "map"
+      :zoom="13"
+      :center="[points[0].longitude,points[0].latitude]"
+      :map-style.sync="mapStyle"
+      :access-token="accessToken">
+      <MglNavigationControl position="top-right"/>
+      <MglMarker v-for="point in points" :coordinates='[point.longitude, point.latitude]' :color="424874"/>
+    </MglMap>
   </div>
 </template>
 
@@ -8,13 +17,18 @@
   import axios from 'axios'
   import { API_URL } from '../main'
   import mapboxgl, { Marker } from 'mapbox-gl'
+  import {MglMap, MglGeojsonLayer, MglMarker, MglAttributionControl, MglNavigationControl, MglGeolocateControl} from 'vue-mapbox'
   import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
   import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
   export default {
     name: 'RouteMap',
     components: {
-
+      MglMap,
+      MglGeolocateControl,
+      MglNavigationControl,
+      MglGeojsonLayer,
+      MglMarker
     },
     data () {
       return {
@@ -44,11 +58,13 @@
       })
     },
     methods: {
+
       createMap: function () {
         mapboxgl.accessToken = this.accessToken
         // init the map
         this.map = new mapboxgl.Map({
           container: 'map',
+
           style: this.mapStyle,
           country_label: 'ru',
           minzoom: 1.3,
@@ -56,7 +72,8 @@
           zoom: 10,
         })
 
-        this.map.addControl(new MapboxDirections({
+
+        map.addControl(new MapboxDirections({
           accessToken: this.accessToken,
           language: 'ru',
           interactive: false,
@@ -75,7 +92,7 @@
 
 <style>
   #map{
-    margin-top: 2em;
+    margin-top: 0em;
     height: 87vh;
     width: 100%;
     border-radius: 8px;
