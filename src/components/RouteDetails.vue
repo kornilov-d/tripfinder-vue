@@ -21,6 +21,13 @@
 
         </b-list-group-item>
       </b-list-group>
+      <br>
+      <template v-if="isLoggedIn">
+        <b-button variant="primary" >
+          <b-icon icon="bookmark-plus" variant="light" aria-hidden="true"></b-icon>Добавить в закладки
+        </b-button>
+      </template>
+
     </b-card>
   </div>
 </template>
@@ -36,6 +43,12 @@ import { API_URL } from '../main'
         id: 0,
         routeinfo: null,
         pointsinfo: null
+      }
+    },
+    computed: {
+      isLoggedIn : function(){ return this.$store.getters.isLoggedIn;  },
+      user () {
+        return this.$store.state.user;
       }
     },
 
@@ -67,6 +80,11 @@ import { API_URL } from '../main'
     border: none;
     padding-left: 0;
     padding-right: 0;
+     outline: none;
+  }
+
+  .route-point:active{
+    outline: none;
   }
 
   .point-name{

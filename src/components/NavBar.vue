@@ -39,6 +39,7 @@
 
 <script>
 
+
 export default {
   name: 'NavBar',
   computed : {
@@ -46,6 +47,9 @@ export default {
     user () {
       return this.$store.state.user;
     }
+  },
+  updated () {
+
   },
   methods: {
     logout: function () {

@@ -39,6 +39,24 @@
         is_admin : false,
       }
     },
+    computed : {
+      stateUser() {
+        return this.username.length >= 6 ? true : false
+      },
+      invalidFeedbackUser() {
+        if (this.username.length > 6) {
+          return ''
+        } else if (this.username.length > 0) {
+          return 'Enter at least 4 characters'
+        } else {
+          return 'Please enter something'
+        }
+      },
+      validFeedbackUser() {
+        return this.state === true ? 'Thank you' : ''
+      }
+    },
+
     methods: {
       register: function () {
         let data = {

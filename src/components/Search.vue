@@ -56,7 +56,7 @@
         isHidden: false,
         types: null,
         selected: [],
-        searchQuery: ''
+        searchString: ''
       }
     },
     created ()  {
@@ -68,8 +68,27 @@
       .then( response => {
       this.types = response.data
       })
+    },
+    computed : {
+      filteredData: function () {
+        var search_array = this.data,
+          searchString = this.searchString;
 
+        if(!searchString){
+          return search_array;
+        }
 
+        searchString = searchString.trim().toLowerCase();
+
+        search_array = search_array.filter(item => {
+          if(item.name.toLowerCase().indexOf(searchString) !== -1){
+            return item;
+          }
+        })
+
+        // Return an array with the filtered data.
+        return search_array;
+      }
     },
     methods : {
       submit: function() {

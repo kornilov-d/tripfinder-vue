@@ -4,7 +4,10 @@
         <div class = "login-window">
           <b-form @submit.prevent="login">
             <b-input-group prepend="@" >
-              <b-input id="input-username" required placeholder="Логин" v-model="username"></b-input>
+              <b-form-input id="input-username" required placeholder="Логин" v-model="username"  :invalid-feedback="invalidFeedbackUser"
+                       :valid-feedback="validFeedbackUser"
+                       :state="stateUser"></b-form-input>
+
             </b-input-group>
             <br>
             <b-input-group type="password" prepend="**">
@@ -32,6 +35,22 @@ export default {
     user () {
       return this.$store.state.user;
 
+    },
+
+    stateUser() {
+      return this.username.length >= 4 ? true : false
+    },
+    invalidFeedbackUser() {
+      if (this.username.length > 4) {
+        return ''
+      } else if (this.username.length > 0) {
+        return 'Введите действительное имя пользователя'
+      } else {
+        return 'Введите имя пользователя'
+      }
+    },
+    validFeedbackUser() {
+      return this.state === true ? 'Отлично!' : ''
     }
   },
   data () {
@@ -46,9 +65,10 @@ export default {
       let username = this.username
       let password = this.password
       this.$store.dispatch('login', { username, password })
-          .then(() => {this.$router.push('/profile')})
+          .then(() => {this.$router.push('Welcome')})
           .catch(err => console.log(err))
     }
+
   }
 }
 
