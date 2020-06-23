@@ -4,11 +4,20 @@
       id="map"
       container = "map"
       :zoom="13"
-      :center="[points[0].longitude,points[0].latitude]"
+      :center="[points[1].longitude,points[1].latitude]"
       :map-style.sync="mapStyle"
       :access-token="accessToken">
       <MglNavigationControl position="top-right"/>
-      <MglMarker v-for="point in points" :coordinates='[point.longitude, point.latitude]' :color="424874"/>
+      <MglMarker v-for="point in points" :coordinates='[point.longitude, point.latitude]' :color="424874">
+        <MglPopup >
+          <strong>
+            {{point.point_name}}
+          </strong>
+          <small>
+            {{point.obj_desc}}
+          </small>
+          </MglPopup>
+      </MglMarker>
     </MglMap>
   </div>
 </template>
@@ -17,7 +26,7 @@
   import axios from 'axios'
   import { API_URL } from '../main'
   import mapboxgl, { Marker } from 'mapbox-gl'
-  import {MglMap, MglGeojsonLayer, MglMarker, MglAttributionControl, MglNavigationControl, MglGeolocateControl} from 'vue-mapbox'
+  import {MglMap, MglPopup, MglGeojsonLayer, MglMarker, MglAttributionControl, MglNavigationControl, MglGeolocateControl} from 'vue-mapbox'
   import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
   import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
@@ -28,7 +37,8 @@
       MglGeolocateControl,
       MglNavigationControl,
       MglGeojsonLayer,
-      MglMarker
+      MglMarker,
+      MglPopup
     },
     data () {
       return {

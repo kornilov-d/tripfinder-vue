@@ -1,8 +1,11 @@
 <template>
   <div>
-    <br>
-    <h1>{{currentUser.username}}</h1>
-    <h1>{{currentUser.email}}</h1>
+    <b-container>
+      <b-row>
+        <b-col cols="4"></b-col>
+        <b-col cols="8"></b-col>
+      </b-row>
+    </b-container>
   </div>
 
 </template>
@@ -11,7 +14,7 @@
   export default {
     name: 'ProfileView',
     computed : {
-      isLoggedIn : function(){ 
+      isLoggedIn : function(){
         return this.$store.getters.isLoggedIn
         },
       currentUser () {

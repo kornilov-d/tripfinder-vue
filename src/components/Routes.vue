@@ -4,13 +4,12 @@
       <b-card
       v-for="item in tourroutes" :item = "item" >
 <!--      :img-src="'https://api.mapbox.com/styles/v1'+mapStyle+'/static/'+tourroute.points[0].longitude+','+tourroute.points[0].latitude+',12.95,0/300x150@2x?access_token='+accessToken"-->
-
         <b-card-title style="text-color: white">
-          <router-link :to="{name: 'Route', params: {id: item.id}}" >
-            {{item.route_name}}<br>
+          <router-link :to="{name: 'Route', params: {id: 4}}" >
+            Вся жизнь - театр<br>
           </router-link>
         </b-card-title>
-        <b-card-text>{{item.route_desc}}</b-card-text>
+        <b-card-text></b-card-text>
       </b-card>
     </b-card-group>
   </div>

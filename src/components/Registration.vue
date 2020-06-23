@@ -29,9 +29,6 @@
 
 <script>
 
-  import SIGNUP_URL from '../store/index'
-  import axios from 'axios'
-  import { API_URL } from '../main'
   export default {
     name: 'Registration',
     data(){
