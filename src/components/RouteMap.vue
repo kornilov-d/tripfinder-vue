@@ -7,17 +7,15 @@
       :center="[points[1].longitude,points[1].latitude]"
       :map-style.sync="mapStyle"
       :access-token="accessToken">
+      <MglAttributionControl />
       <MglNavigationControl position="top-right"/>
-      <MglMarker v-for="point in points" :coordinates='[point.longitude, point.latitude]' :color="424874">
-        <MglPopup >
-          <strong>
-            {{point.point_name}}
-          </strong>
-          <small>
-            {{point.obj_desc}}
-          </small>
-          </MglPopup>
+
+      <MglMarker v-for="point in points" :coordinates='[point.longitude, point.latitude]' >
+        <div slot="marker">
+        <b-avatar  :text=point.position variant="primary" size="3em"></b-avatar>
+        </div>
       </MglMarker>
+
     </MglMap>
   </div>
 </template>
@@ -36,6 +34,7 @@
       MglMap,
       MglGeolocateControl,
       MglNavigationControl,
+      MglAttributionControl,
       MglGeojsonLayer,
       MglMarker,
       MglPopup
@@ -46,6 +45,315 @@
         mapStyle: 'mapbox://styles/kornilovd/ckblkalnx0ivc1iqrnv52cl2u',
         mapboxDir: null,
         points: [],
+
+        settings: {
+        'id': 'route',
+        'type': 'line',
+        'source': 'route',
+        'layout': {
+        'line-join': 'round',
+          'line-cap': 'round'
+      },
+        'paint': {
+        'line-color': '#888',
+          'line-width': 8
+      },
+        },
+        geojson: {
+          "type": "geojson",
+          "data": [
+            {
+              "type": "Feature",
+              "weight_name": "routability",
+              "legs": [
+                {
+                  "summary": "набережная реки Карповки, Большой проспект П.С.",
+                  "steps": [],
+                  "distance": 3091.802,
+                  "duration": 676.386,
+                  "weight": 676.386
+                },
+                {
+                  "summary": "Большая Пушкарская улица, Каменноостровский проспект",
+                  "steps": [],
+                  "distance": 2991.196,
+                  "duration": 570.783,
+                  "weight": 570.783
+                },
+                {
+                  "summary": "проспект Медиков, Каменноостровский проспект",
+                  "steps": [],
+                  "distance": 2078.999,
+                  "duration": 556.312,
+                  "weight": 556.312
+                },
+                {
+                  "summary": "Каменноостровский проспект, Австрийская площадь",
+                  "steps": [],
+                  "distance": 1389.805,
+                  "duration": 341.475,
+                  "weight": 341.475
+                }
+              ],
+              "geometry": {
+                "coordinates": [
+                  [
+                    30.316925,
+                    59.969727
+                  ],
+                  [
+                    30.317472,
+                    59.969822
+                  ],
+                  [
+                    30.31749,
+                    59.969852
+                  ],
+                  [
+                    30.318781,
+                    59.969696
+                  ],
+                  [
+                    30.318165,
+                    59.968414
+                  ],
+                  [
+                    30.317312,
+                    59.968029
+                  ],
+                  [
+                    30.315525,
+                    59.967983
+                  ],
+                  [
+                    30.311573,
+                    59.968506
+                  ],
+                  [
+                    30.310577,
+                    59.968845
+                  ],
+                  [
+                    30.309534,
+                    59.969917
+                  ],
+                  [
+                    30.310671,
+                    59.969429
+                  ],
+                  [
+                    30.310259,
+                    59.969109
+                  ],
+                  [
+                    30.311573,
+                    59.968506
+                  ],
+                  [
+                    30.314116,
+                    59.968143
+                  ],
+                  [
+                    30.313969,
+                    59.967785
+                  ],
+                  [
+                    30.313091,
+                    59.966385
+                  ],
+                  [
+                    30.299061,
+                    59.957775
+                  ],
+                  [
+                    30.300779,
+                    59.957024
+                  ],
+                  [
+                    30.303833,
+                    59.958889
+                  ],
+                  [
+                    30.303585,
+                    59.958988
+                  ],
+                  [
+                    30.303354,
+                    59.95908
+                  ],
+                  [
+                    30.303833,
+                    59.958889
+                  ],
+                  [
+                    30.312784,
+                    59.964489
+                  ],
+                  [
+                    30.308105,
+                    59.969505
+                  ],
+                  [
+                    30.307644,
+                    59.969994
+                  ],
+                  [
+                    30.30327,
+                    59.975628
+                  ],
+                  [
+                    30.308624,
+                    59.976646
+                  ],
+                  [
+                    30.309559,
+                    59.978012
+                  ],
+                  [
+                    30.31263,
+                    59.978092
+                  ],
+                  [
+                    30.314339,
+                    59.97747
+                  ],
+                  [
+                    30.314392,
+                    59.977531
+                  ],
+                  [
+                    30.314339,
+                    59.97747
+                  ],
+                  [
+                    30.317686,
+                    59.976627
+                  ],
+                  [
+                    30.317686,
+                    59.975861
+                  ],
+                  [
+                    30.314255,
+                    59.970989
+                  ],
+                  [
+                    30.314116,
+                    59.968143
+                  ],
+                  [
+                    30.313969,
+                    59.967785
+                  ],
+                  [
+                    30.313314,
+                    59.966557
+                  ],
+                  [
+                    30.311749,
+                    59.96558
+                  ],
+                  [
+                    30.314037,
+                    59.963188
+                  ],
+                  [
+                    30.311605,
+                    59.962402
+                  ],
+                  [
+                    30.311279,
+                    59.962635
+                  ],
+                  [
+                    30.310253,
+                    59.962357
+                  ],
+                  [
+                    30.311279,
+                    59.962635
+                  ],
+                  [
+                    30.311605,
+                    59.962402
+                  ],
+                  [
+                    30.314037,
+                    59.963188
+                  ],
+                  [
+                    30.316935,
+                    59.960175
+                  ],
+                  [
+                    30.316669,
+                    59.959858
+                  ],
+                  [
+                    30.31715,
+                    59.959946
+                  ],
+                  [
+                    30.312241,
+                    59.965225
+                  ],
+                  [
+                    30.312429,
+                    59.965485
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "distance": 9551.803,
+              "duration": 2144.957,
+              "weight": 2144.957
+            }
+          ],
+          "waypoints": [
+            {
+              "distance": 3.005,
+              "name": "",
+              "location": [
+                30.316925,
+                59.969727
+              ]
+            },
+            {
+              "distance": 7.564,
+              "name": "",
+              "location": [
+                30.303585,
+                59.958988
+              ]
+            },
+            {
+              "distance": 38.252,
+              "name": "",
+              "location": [
+                30.314392,
+                59.977531
+              ]
+            },
+            {
+              "distance": 18.262,
+              "name": "",
+              "location": [
+                30.310253,
+                59.962357
+              ]
+            },
+            {
+              "distance": 20.909,
+              "name": "улица Льва Толстого",
+              "location": [
+                30.312429,
+                59.965485
+              ]
+            }
+          ],
+          "code": "Ok",
+          "uuid": "n2KXQaYnKFNsosCC__De3Yxv5FVoQZ934_GGdj8mqC0tppQBzuc8og=="
+        }
       }
     },
     created () {
@@ -58,6 +366,7 @@
           this.points = response.data
         })
     },
+
     mounted () {
         this.createMap()
         this.points.map((map) =>{

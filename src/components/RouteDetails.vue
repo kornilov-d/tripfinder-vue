@@ -9,10 +9,10 @@
       <b-list-group :key="index" v-for="(point, index) in routeinfo.points" role="tablist">
         <b-list-group-item  class="route-point" style="max-width: 500px;">
           <div class="point-name d-flex align-items-center" v-b-toggle="'accordion-'+index" role="tab">
-            <b-avatar :text='index+1' class="point-pos" size="2em" variant="primary"/>
+            <b-avatar :text='index+1' class="point-pos"  style = "width: 2.5em; height: 2.5em;" variant="primary"/>
             <div class="mr-auto">
               <small>{{pointsinfo[index].obj_type.type_name}}</small>
-              <h6>{{point.point_name}}<span><fa-icon icon="bookmark" /> </span></h6>
+              <h6>{{point.point_name}}<span> </span></h6>
             </div>
           </div>
           <b-collapse :id="'accordion-'+index" role="tabpanel" class="add-info">
@@ -23,8 +23,11 @@
       </b-list-group>
       <br>
       <template v-if="isLoggedIn">
-        <b-button variant="primary" >
-          <b-icon icon="bookmark-plus" variant="light" aria-hidden="true"></b-icon>Добавить в закладки
+        <b-button variant="primary" class="mb-2" style="margin-right: 4em;">
+          <b-icon icon="bookmark-plus" variant="light" aria-hidden="true" style="margin-right: 0.8em;"></b-icon>Добавить в закладки
+        </b-button>
+        <b-button variant="none" class="mb-2" pill style="align-self: end;">
+          <b-icon icon="heart" variant="danger" aria-hidden="true" style="margin-right: 0.2em;"></b-icon>{{routeinfo.likes}}
         </b-button>
       </template>
 
@@ -35,6 +38,7 @@
 <script>
 import axios from 'axios'
 import { API_URL } from '../main'
+
 
   export default {
     name: 'RouteDetails',
@@ -93,12 +97,21 @@ import { API_URL } from '../main'
   .point-name:hover{
     color: $info;
   }
-  .b-avatar{
+  .b-avatar {
     margin-right: 1em;
+
+  }
+
+  .b-avatar-text{
+    width: 30px;
+    height: 30px;
   }
 
   .add-info{
     padding-left: 3em;
+  }
+  .point-name:focus{
+    outline: none;
   }
 
 </style>

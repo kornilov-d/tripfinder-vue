@@ -8,6 +8,10 @@ import store from './store'
 import GlMap from "vue-mapbox";
 import VueCompositionApi from "@vue/composition-api";
 import VueResource from "vue-resource";
+import { BootstrapVueIcons } from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
+
+Vue.use(BootstrapVueIcons)
 import * as VeeValidate from 'vee-validate';
 
 Vue.use(VueCompositionApi);

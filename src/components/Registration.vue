@@ -1,9 +1,10 @@
 <template>
   <b-container>
   <div class = "reg-window">
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>Проверьте правильность ввёденных данных.</b-alert>
     <b-form @submit.prevent="register">
       <b-input-group  >
-        <b-input id="new-email" placeholder="E-mail" v-model="email" required autofocus></b-input>
+        <b-input id="new-email" placeholder="E-mail" v-model="email" :type="isEmailValid" required autofocus></b-input>
       </b-input-group>
       <br>
       <b-input-group prepend="@" >
@@ -17,7 +18,7 @@
       <br>
 
       <br>
-      <b-button block variant="primary" type="submit" >
+      <b-button block variant="primary" type="submit">
         Создать аккаунт
       </b-button>
       <br>
@@ -37,6 +38,8 @@
         email : "",
         password : "",
         is_admin : false,
+        showDismissibleAlert: false,
+        reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
       }
     },
     computed : {
@@ -58,6 +61,10 @@
     },
 
     methods: {
+      isEmailValid: function() {
+        return (this.email == "")? "" : (this.reg.test(this.email)) ? 'has-success' : 'has-error';
+      },
+
       register: function () {
         let data = {
           'email': this.email,
@@ -68,7 +75,10 @@
 
         this.$store.dispatch('register', data)
           .then(() => this.$router.push('/'))
-          .catch(err => console.log(err))
+          .catch(err => this.showDismissibleAlert=true
+          )
+
+        event.target.reset();
       },
 
 

@@ -101,7 +101,8 @@ export default {
       searchString = searchString.trim().toLowerCase();
 
       search_array = search_array.filter(item => {
-        if((item.route_desc.toLowerCase().indexOf(searchString) || item.route_name.toLowerCase().indexOf(searchString)) !== -1){
+        if(item.route_desc.toLowerCase().indexOf(searchString)  !== -1 ||
+          item.route_name.toLowerCase().indexOf(searchString)  !== -1 ){
           return item;
         }
       })
@@ -131,6 +132,7 @@ export default {
 
 <style scoped lang="scss">
   body,html{
+
     .search-bar{
       margin-top: 1em;
     }
@@ -149,5 +151,12 @@ export default {
     margin: 0;
     width: 100%;
     height: 100%;
+
+    #collapse-query:active{
+      outline: none;
+    }
+    h4:focus{
+      outline: none;
+    }
   }
 </style>

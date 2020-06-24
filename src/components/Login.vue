@@ -14,7 +14,7 @@
               <b-input id="input-password" required type="password" placeholder="Пароль" v-model="password"></b-input>
             </b-input-group>
             <br>
-            <b-button block variant="primary" type="submit" >
+            <b-button block variant="primary" type="submit" @click="this.$forceUpdate">
               Войти
             </b-button>
             <br>
