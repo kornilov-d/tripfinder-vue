@@ -1,4 +1,6 @@
-# Tripfinder: Frontend
+# Tripfinder
+
+Web-based app designed for tourists. Currently works in Saint-Petersburg, more cities to be added soon. 
 
 ## Project setup
 ```
