@@ -1,6 +1,7 @@
 # Tripfinder
 
 Web-based app designed for tourists. Currently works in Saint-Petersburg, more cities to be added soon. 
+App is currently available via https://tripfinder.netlify.app.
 
 ## Project setup
 ```
