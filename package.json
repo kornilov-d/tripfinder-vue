@@ -16,7 +16,7 @@
     "@mapbox/mapbox-gl-directions": "^4.0.3",
     "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@vue/composition-api": "^0.6.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
